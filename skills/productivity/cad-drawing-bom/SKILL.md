@@ -32,7 +32,29 @@ Load when the user mentions any of:
 - A drawing that only has a single parts list / 明细栏 in a table — just extract that table directly, no VISION analysis needed.
 - Scanned/photographed drawings of poor quality — low-resolution or heavily distorted images may cause VISION misreads. Ask for a cleaner export.
 
-## Tool choice
+## Alternative vision providers
+
+The default vision provider is MiniMax M3 (configured in `auxiliary.vision`). Coze (扣子) can be used as an alternative via OpenAI-compatible Chat API:
+
+**Coze Doubao vision models:**
+- Doubao-Seed-1.6-vision (cheaper): input 0.8 credits/ktokens, output 8 credits/ktokens
+- Doubao-1.5-vision-pro-32k: input 3 credits/ktokens, output 9 credits/ktokens
+
+**Setup (requires COZE_API_KEY):**
+```yaml
+# In config.yaml custom_providers section:
+custom_providers:
+  - name: coze
+    base_url: https://api.coze.cn/v3
+    api_key: "your-coze-pat"
+    models:
+      doubao-seed-1-6-vision:
+        supports_vision: true
+```
+
+Then switch vision provider to `custom:coze` with model `doubao-seed-1-6-vision`. Usage costs Coze credits (paid plan). To switch back to MiniMax, restore `custom:minimax_domestic` / `MiniMax-M3`.
+
+**Documentation:** https://docs.coze.cn/guides/vlm
 
 **Primary tool**: `vision_analyze()` — the user provides a PDF or image. Convert PDF to PNG via PyMuPDF (fitz) first if needed, then analyze with vision.
 

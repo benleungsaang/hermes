@@ -193,6 +193,45 @@ A useful setup (and one the user has already deployed):
 
 These run in `cronjob` with `deliver=local` and `enabled_toolsets=["terminal", "file"]`.
 
+## Memory export and disaster recovery
+
+The user may want to back up their Hermes knowledge (skills + workspace + config + memory) to GitHub for redeployment on a new server.
+
+**What to back up:**
+| Item | Backup method | Sensitive? |
+|---|---|---|
+| Skills (33 skills, ~12MB) | Copy `~/.hermes/skills/` to repo | No (no keys) |
+| Workspace (cad-bom, notes, learnings) | Copy `~/.hermes/workspace/` to repo | No |
+| config.yaml | Copy, mask API keys with sed: `sed 's/api_key:.*/api_key: "***"/g'` | Keys masked |
+| Memory entries (built-in) | **Export to file first** — memory is in SQLite DB, not a plain file. Write to `~/.hermes/workspace/hermes-recovery/memory_export_<date>.md` | No (preferences/rules only) |
+| .env (API keys) | Do NOT upload. Manual transfer on new server. | Yes |
+| Conversation history | Do NOT upload (may contain business content) | User decides |
+
+**Rolling backup pattern** (keep last 10 versions):
+```bash
+# Create timestamped snapshot
+TS=$(date -u +%Y-%m-%d_%H%M%S)
+mkdir -p repo/hermes-backup/$TS
+cp memory_export.md repo/hermes-backup/$TS/
+cp HERMES_RECOVERY.md repo/hermes-backup/$TS/
+
+# Prune old ones
+BACKUPS=($(ls -d repo/hermes-backup/20* | sort))
+COUNT=${#BACKUPS[@]}
+if [ $COUNT -gt 10 ]; then
+  for ((i=0; i<COUNT-10; i++)); do rm -rf "${BACKUPS[$i]}"; done
+fi
+```
+
+**HERMES_RECOVERY.md** — a full recovery checklist placed in `workspace/hermes-recovery/`. On a new server, the agent reads this file and executes each step: clone repo, restore skills/workspace/config, install deps, download ODA AppImage, re-import memory from the export file.
+
+**Memory import on new server:**
+```
+@read ~/.hermes/workspace/hermes-recovery/memory_export_<date>.md
+然后说：将这些记忆导入到 memory store 和 user profile。
+```
+The agent reads the export file and uses the memory tool to restore each entry.
+
 ## Pitfalls
 
 - **Don't write personal facts into the agent's built-in memory.** The user said "具体事项不写入内置记忆; 用户主动问时才检索." Use the local notes/ directory instead.

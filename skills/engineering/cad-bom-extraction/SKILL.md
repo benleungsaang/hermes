@@ -168,7 +168,7 @@ Three row types:
 6. **Electrical cabinet 始终最后**：B 2026-06-18。Electrical cabinet 始终排主表最后一行的位置，不受物料流向顺序影响。即使图纸上有标注，仍然排最后（但不是隐含件，不需浅黄底色[隐]前缀）。
 7. **Infeed conveyor 不列主表**：B 2026-06-18。Infeed conveyor 不放入主 BOM 表，改为放在主表下方的"忽略项"区段（灰色斜体），标记为"按要求忽略"。
 8. **每项必须标注位置**：B 2026-06-18。每个 BOM 条目的"说明"栏必须有明确位置描述（如"主输送线最右侧""4支线各一，包装主机位置"），从 VISION 布局分析中提取，不允许笼统描述。
-5. **Name from DXF MTEXT is authoritative** for exact spelling — VISION may misread characters. When DXF and VISION disagree on a name, trust DXF.
+9. **Name from DXF MTEXT is authoritative** for exact spelling — VISION may misread characters. When DXF and VISION disagree on a name, trust DXF.
 
 ## Geometric guessing (guess_unlabeled_geometry)
 
@@ -223,8 +223,20 @@ The framework supports more rules — extend `GEOMETRY_GUESS_RULES` or branch on
 ## Files
 
 - `tools/cad_bom_extract.py` — main extractor (DXF/DWG pinpoint mode)
+- `scripts/dwg2pdf.py` — DWG → A3 PDF quick render via PyMuPdfBackend (for visual reference only, not used in BOM pipeline)
 - `scripts/render_dxf_for_vision.py` — DXF → vision-readable PNG
 - `references/drawing-style-examples.md` — concrete examples of each drawing style
 - `references/correction-history.md` — chronological log of B's corrections
 - `references/odafc-setup.md` — ODA File Converter setup steps, test commands, and failure troubleshooting
 - `references/ezdxf-rendering-pitfalls.md` — rendering failure modes (historical reference, not for use)
+
+## DWG quick-render (for visual reference, not BOM)
+
+`scripts/dwg2pdf.py` converts a DWG to A3 PDF via the ezdxf + PyMuPdfBackend pipeline:
+`dwg → ODAFC → DXF → Frontend.draw_layout → PyMuPdfBackend.get_pdf_bytes → .pdf`
+
+Limitations:
+- Chinese text may render as boxes (missing CJK font in ezdxf pipeline)
+- Complex block-heavy drawings (>100 blocks) may take 30-60s
+- The DIMASSOC warnings from ODAFC are normal and non-fatal
+- This is NOT a substitute for the user's AutoCAD-exported PDF for VISION analysis

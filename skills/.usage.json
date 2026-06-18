@@ -3,27 +3,40 @@
     "archived_at": null,
     "created_at": "2026-06-17T15:07:29.261776+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-06-18T04:48:05.706603+00:00",
-    "last_used_at": "2026-06-18T03:27:50.978585+00:00",
-    "last_viewed_at": "2026-06-18T03:27:50.973548+00:00",
-    "patch_count": 29,
+    "last_patched_at": "2026-06-18T10:24:21.897059+00:00",
+    "last_used_at": "2026-06-18T10:53:01.156355+00:00",
+    "last_viewed_at": "2026-06-18T10:53:01.150506+00:00",
+    "patch_count": 32,
     "pinned": false,
     "state": "active",
-    "use_count": 12,
-    "view_count": 12
+    "use_count": 15,
+    "view_count": 15
   },
   "cad-drawing-bom": {
     "archived_at": null,
     "created_at": "2026-06-17T14:42:57.115631+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-06-18T04:36:40.858835+00:00",
-    "last_used_at": "2026-06-18T04:36:23.268147+00:00",
-    "last_viewed_at": "2026-06-18T04:36:23.261666+00:00",
-    "patch_count": 19,
+    "last_patched_at": "2026-06-18T07:10:12.375001+00:00",
+    "last_used_at": "2026-06-18T10:52:56.436583+00:00",
+    "last_viewed_at": "2026-06-18T10:52:56.432511+00:00",
+    "patch_count": 20,
     "pinned": false,
     "state": "active",
-    "use_count": 8,
-    "view_count": 8
+    "use_count": 11,
+    "view_count": 11
+  },
+  "cad-dwg-to-pdf": {
+    "archived_at": null,
+    "created_at": "2026-06-18T10:25:46.612356+00:00",
+    "created_by": null,
+    "last_patched_at": "2026-06-18T14:50:19.416129+00:00",
+    "last_used_at": "2026-06-18T14:49:33.818221+00:00",
+    "last_viewed_at": "2026-06-18T14:49:33.813792+00:00",
+    "patch_count": 4,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
   },
   "chat-concise-defaults": {
     "archived_at": null,
@@ -56,13 +69,13 @@
     "created_at": "2026-06-16T17:47:33.564468+00:00",
     "created_by": null,
     "last_patched_at": "2026-06-17T14:16:50.709772+00:00",
-    "last_used_at": "2026-06-17T14:16:38.019713+00:00",
-    "last_viewed_at": "2026-06-17T14:16:38.015443+00:00",
+    "last_used_at": "2026-06-18T14:37:57.678230+00:00",
+    "last_viewed_at": "2026-06-18T14:37:57.670804+00:00",
     "patch_count": 2,
     "pinned": false,
     "state": "active",
-    "use_count": 2,
-    "view_count": 2
+    "use_count": 3,
+    "view_count": 3
   },
   "hermes-agent-skill-authoring": {
     "archived_at": null,
@@ -77,31 +90,57 @@
     "use_count": 2,
     "view_count": 2
   },
+  "hermes-backup": {
+    "archived_at": null,
+    "created_at": "2026-06-18T10:24:29.020121+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_used_at": "2026-06-18T16:04:49.278039+00:00",
+    "last_viewed_at": "2026-06-18T16:04:49.273231+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 2,
+    "view_count": 2
+  },
+  "hermes-model-failover": {
+    "archived_at": null,
+    "created_at": "2026-06-18T14:49:05.544012+00:00",
+    "created_by": "agent",
+    "last_patched_at": "2026-06-18T15:56:49.439435+00:00",
+    "last_used_at": "2026-06-18T16:01:29.881195+00:00",
+    "last_viewed_at": "2026-06-18T16:01:29.873883+00:00",
+    "patch_count": 4,
+    "pinned": false,
+    "state": "active",
+    "use_count": 2,
+    "view_count": 2
+  },
   "hermes-personal-knowledge-loop": {
     "archived_at": null,
     "created_at": "2026-06-16T20:14:58.280913+00:00",
     "created_by": "agent",
-    "last_patched_at": "2026-06-17T10:42:32.765375+00:00",
-    "last_used_at": "2026-06-17T14:14:14.161088+00:00",
-    "last_viewed_at": "2026-06-17T14:14:14.156193+00:00",
-    "patch_count": 11,
+    "last_patched_at": "2026-06-18T07:10:40.583570+00:00",
+    "last_used_at": "2026-06-18T16:02:08.201687+00:00",
+    "last_viewed_at": "2026-06-18T16:02:08.196297+00:00",
+    "patch_count": 12,
     "pinned": false,
     "state": "active",
-    "use_count": 18,
-    "view_count": 18
+    "use_count": 20,
+    "view_count": 20
   },
   "hermes-secondary-model-on-demand": {
     "archived_at": null,
     "created_at": "2026-06-17T09:18:51.490885+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-06-17T14:15:55.155385+00:00",
-    "last_used_at": "2026-06-17T14:14:32.687810+00:00",
-    "last_viewed_at": "2026-06-17T14:14:32.683906+00:00",
+    "last_used_at": "2026-06-18T16:01:50.000720+00:00",
+    "last_viewed_at": "2026-06-18T16:01:49.986190+00:00",
     "patch_count": 17,
     "pinned": false,
     "state": "active",
-    "use_count": 23,
-    "view_count": 23
+    "use_count": 24,
+    "view_count": 24
   },
   "hermes-skill-discovery": {
     "archived_at": null,
@@ -129,6 +168,19 @@
     "use_count": 1,
     "view_count": 1
   },
+  "multi-user-routing": {
+    "archived_at": null,
+    "created_at": "2026-06-18T15:38:59.936408+00:00",
+    "created_by": null,
+    "last_patched_at": "2026-06-18T16:03:55.426692+00:00",
+    "last_used_at": "2026-06-18T16:01:46.299841+00:00",
+    "last_viewed_at": "2026-06-18T16:01:46.286135+00:00",
+    "patch_count": 8,
+    "pinned": false,
+    "state": "active",
+    "use_count": 2,
+    "view_count": 2
+  },
   "packaging-machine-sales-cn": {
     "archived_at": null,
     "created_at": "2026-06-16T20:14:57.272358+00:00",
@@ -147,13 +199,13 @@
     "created_at": "2026-06-16T19:36:36.336785+00:00",
     "created_by": "agent",
     "last_patched_at": "2026-06-17T11:03:27.488959+00:00",
-    "last_used_at": "2026-06-17T11:02:41.761988+00:00",
-    "last_viewed_at": "2026-06-17T11:02:41.751141+00:00",
+    "last_used_at": "2026-06-18T10:52:56.427401+00:00",
+    "last_viewed_at": "2026-06-18T10:52:56.423427+00:00",
     "patch_count": 3,
     "pinned": false,
     "state": "active",
-    "use_count": 5,
-    "view_count": 5
+    "use_count": 6,
+    "view_count": 6
   },
   "qmd": {
     "archived_at": null,

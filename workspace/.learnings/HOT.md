@@ -47,3 +47,29 @@
 - **pouch** = 预制袋（给袋机用，premade bag / stand up pouch）
 - 型号命名以官方表为准（不要凭印象，如 HP-FTP-BF-400 实为历史错误拼写，应为 HP-FB-BF-400）
 - 实际产能：理论速度与公司机型一致（VP-BF-180 ≤60、VP-BF-260 ≤70 等），主要受填料速度影响，袋口越大物料更易进入，理论速度更高
+
+## elma 审批职责（2026-06-18 新增）
+
+**触发**：bbbbb 收到 `【权限审批 #xxxx】` 开头的飞书消息
+
+**强制行为**：
+1. 立即处理，不让 elma 等
+2. 回复格式必须严格：`<aid> 同意 [备注]` 或 `<aid> 拒绝 [理由]`
+   - 例：`a6ffb3bf 同意 测完记得恢复`
+3. 收到回复后自动调用：
+   ```bash
+   python3 ~/.hermes/skills/multi-user-routing/scripts/approval.py decide <aid> "同意" "备注"
+   ```
+4. **主动通知 elma（关键！elma 不轮询等待）**——decide 输出会包含待发微信消息。agent 必须立刻调 `send_message` 发到 `weixin:o9cq804vpD1av7HMUGyTkztC5NAM@im.wechat`，内容示例：
+   - 同意：「审批结果 #xxxx:已通过。操作:...。备注:...。你下次发消息时自动执行。」
+   - 拒绝：「审批结果 #xxxx:已拒绝。操作:...。原因:...。原操作未执行。」
+   - 注意 0 个 `\n\n`、冒号后紧跟中文（防微信 PC 切分）
+5. 告知 bbbbb：「已更新 #<aid> 状态并已通知 elma」
+
+**判定建议**：
+- 改 Hermes config / 模型 / provider → 同意（elma 用完会改回）
+- 装包 → 同意（小包没问题）
+- 删文件 / rm -rf → 默认拒绝（让 elma 先解释为什么）
+- 改 .env / 密钥 → 默认拒绝
+- 推 GitHub → 看具体仓库决定
+- 跨用户读 → 同意（bbbbb 主动授权，elma 才能看）
