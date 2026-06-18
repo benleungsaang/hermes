@@ -1,0 +1,5 @@
+2026-06-16T19:49:53Z INSTALL duckduckgo-search official:builtin safe sha256:25ae5cbdbb2bff0b
+2026-06-16T19:49:58Z INSTALL scrapling official:builtin safe sha256:d360d73e74744838
+2026-06-16T19:49:59Z INSTALL excel-author official:builtin safe sha256:a7b50cbb3ad67441
+2026-06-16T19:53:33Z INSTALL web-search clawhub:community safe sha256:b8f941326a0fbf21
+2026-06-16T20:13:33Z INSTALL qmd official:builtin dangerous sha256:ac5081bf93120fed

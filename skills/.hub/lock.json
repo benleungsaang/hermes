@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "installed": {
+    "duckduckgo-search": {
+      "source": "official",
+      "identifier": "official/research/duckduckgo-search",
+      "trust_level": "builtin",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:25ae5cbdbb2bff0b",
+      "install_path": "research/duckduckgo-search",
+      "files": [
+        "SKILL.md",
+        "scripts/duckduckgo.sh"
+      ],
+      "metadata": {},
+      "installed_at": "2026-06-16T19:49:53.623491+00:00",
+      "updated_at": "2026-06-16T19:49:53.623500+00:00"
+    },
+    "scrapling": {
+      "source": "official",
+      "identifier": "official/research/scrapling",
+      "trust_level": "builtin",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:d360d73e74744838",
+      "install_path": "research/scrapling",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {},
+      "installed_at": "2026-06-16T19:49:58.729472+00:00",
+      "updated_at": "2026-06-16T19:49:58.729482+00:00"
+    },
+    "excel-author": {
+      "source": "official",
+      "identifier": "official/finance/excel-author",
+      "trust_level": "builtin",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:a7b50cbb3ad67441",
+      "install_path": "finance/excel-author",
+      "files": [
+        "SKILL.md",
+        "scripts/recalc.py"
+      ],
+      "metadata": {},
+      "installed_at": "2026-06-16T19:49:59.282625+00:00",
+      "updated_at": "2026-06-16T19:49:59.282633+00:00"
+    },
+    "web-search": {
+      "source": "clawhub",
+      "identifier": "web-search",
+      "trust_level": "community",
+      "scan_verdict": "safe",
+      "content_hash": "sha256:b8f941326a0fbf21",
+      "install_path": "web-search",
+      "files": [
+        "scripts/search.py",
+        "skill-card.md",
+        "SKILL.md",
+        "_meta.json"
+      ],
+      "metadata": {},
+      "installed_at": "2026-06-16T19:53:33.250620+00:00",
+      "updated_at": "2026-06-16T19:53:33.250631+00:00"
+    },
+    "qmd": {
+      "source": "official",
+      "identifier": "official/research/qmd",
+      "trust_level": "builtin",
+      "scan_verdict": "dangerous",
+      "content_hash": "sha256:ac5081bf93120fed",
+      "install_path": "research/qmd",
+      "files": [
+        "SKILL.md"
+      ],
+      "metadata": {},
+      "installed_at": "2026-06-16T20:13:33.077819+00:00",
+      "updated_at": "2026-06-16T20:13:33.077831+00:00"
+    }
+  }
+}
